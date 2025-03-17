@@ -1,0 +1,100 @@
+[gd_scene load_steps=15 format=3 uid="uid://cuxs8voyhekjj"]
+
+[ext_resource type="Script" path="res://Scripts/akuna.gd" id="1_gdalr"]
+[ext_resource type="Texture2D" uid="uid://boaj43er6qtaj" path="res://Assets/Akuna/akunaSide.png" id="1_sm0q7"]
+[ext_resource type="Texture2D" uid="uid://bg3isiis346if" path="res://Assets/Akuna/akunaFrontBack.png" id="2_vi2pw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_soyp7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2xlg"]
+atlas = ExtResource("2_vi2pw")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13xli"]
+atlas = ExtResource("2_vi2pw")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgla4"]
+atlas = ExtResource("2_vi2pw")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj4rf"]
+atlas = ExtResource("1_sm0q7")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0w7nl"]
+atlas = ExtResource("1_sm0q7")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f4p8"]
+atlas = ExtResource("1_sm0q7")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1t86"]
+atlas = ExtResource("2_vi2pw")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqoi3"]
+atlas = ExtResource("2_vi2pw")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpuqw"]
+atlas = ExtResource("2_vi2pw")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hcgyk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2xlg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13xli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgla4")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj4rf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0w7nl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f4p8")
+}],
+"loop": true,
+"name": &"walk_side",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1t86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqoi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpuqw")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 8.0
+}]
+
+[node name="Akuna" type="CharacterBody2D"]
+script = ExtResource("1_gdalr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_soyp7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hcgyk")
+animation = &"walk_down"
+frame = 1
+frame_progress = 0.209259
