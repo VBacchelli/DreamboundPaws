@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cuxs8voyhekjj" path="res://Scenes/Akuna.tscn" id="2_gvwy6"]
 
 [node name="Main" type="Node2D"]
+y_sort_enabled = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_u4inu")]
 position = Vector2(601, 284)

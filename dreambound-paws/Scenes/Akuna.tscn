@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://cuxs8voyhekjj"]
 
-[ext_resource type="Script" path="res://Scripts/akuna.gd" id="1_gdalr"]
+[ext_resource type="Script" uid="uid://chlpmqyrp5nkb" path="res://Scripts/akuna.gd" id="1_gdalr"]
 [ext_resource type="Texture2D" uid="uid://boaj43er6qtaj" path="res://Assets/Akuna/akunaSide.png" id="1_sm0q7"]
 [ext_resource type="Texture2D" uid="uid://5s71tqeqjqrd" path="res://Assets/Akuna/akunaIdleSide.png" id="2_ek83v"]
 [ext_resource type="Texture2D" uid="uid://bg3isiis346if" path="res://Assets/Akuna/akunaFrontBack.png" id="2_vi2pw"]
@@ -169,6 +169,7 @@ animations = [{
 }]
 
 [node name="Akuna" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_gdalr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

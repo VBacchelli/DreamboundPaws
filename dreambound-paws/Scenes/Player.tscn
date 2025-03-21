@@ -1,6 +1,6 @@
 [gd_scene load_steps=62 format=3 uid="uid://oyvashcj5usu"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_5dcpq"]
+[ext_resource type="Script" uid="uid://c4b045qurhcom" path="res://Scripts/player.gd" id="1_5dcpq"]
 [ext_resource type="Texture2D" uid="uid://cyphg8ui58ylk" path="res://Assets/Player/player-sheet.png" id="1_7bkxu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pumql"]
@@ -268,11 +268,6 @@ animations = [{
 "name": &"idle_up",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
-"name": &"knight_run_down",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_etwyb")
@@ -458,6 +453,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_5dcpq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -465,4 +461,4 @@ shape = SubResource("CapsuleShape2D_pumql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0wtcd")
-animation = &"knight_run_down"
+animation = &"idle_down"
