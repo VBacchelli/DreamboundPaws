@@ -6,14 +6,12 @@ const BASE_SPEED = 250.0
 const SPRINT_SPEED = 400.0  # Increased speed when sprinting
 const JUMP_VELOCITY = -400.0
 
-@onready var behind_sprite = $YourSpriteNode  # Replace with the actual node path
-
 # Offsets to position the sprite behind the player
 var offsets = {
-	"up": Vector2(0, 60),     # Behind when facing up
-	"down": Vector2(0, -60),  # Behind when facing down
-	"right": Vector2(-60, 0),   # Behind when facing sideways
-	"left": Vector2(60,0)
+	"up": Vector2(15, 40),     # Behind when facing up
+	"down": Vector2(-15, -40),  # Behind when facing down
+	"right": Vector2(-40, 10),   # Behind when facing sideways
+	"left": Vector2(40,-10)
 }
 
 func update_behind_sprite():
