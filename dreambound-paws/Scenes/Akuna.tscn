@@ -177,4 +177,4 @@ shape = SubResource("CapsuleShape2D_soyp7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hcgyk")
-animation = &"idle_down"
+animation = &"walk_down"

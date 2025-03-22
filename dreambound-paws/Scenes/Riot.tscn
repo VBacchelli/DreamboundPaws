@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://cwlml68yhpy5u"]
+
+[ext_resource type="Script" uid="uid://d61e0w533k3e" path="res://Scripts/riot.gd" id="1_knhbq"]
+[ext_resource type="Texture2D" uid="uid://brh50ek6h8dx4" path="res://Assets/Riot/RiotFrontIdleWalk.png" id="1_lhb56"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i6hu1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhb56"]
+atlas = ExtResource("1_lhb56")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e576q"]
+atlas = ExtResource("1_lhb56")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy02e"]
+atlas = ExtResource("1_lhb56")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcuxb"]
+atlas = ExtResource("1_lhb56")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knhbq"]
+atlas = ExtResource("1_lhb56")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4va2"]
+atlas = ExtResource("1_lhb56")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lhb56"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhb56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e576q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy02e")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcuxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knhbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4va2")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 6.0
+}]
+
+[node name="Riot" type="CharacterBody2D"]
+script = ExtResource("1_knhbq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_i6hu1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lhb56")
+animation = &"walk_down"
