@@ -10,10 +10,10 @@ const JUMP_VELOCITY = -400.0
 
 # Offsets to position the sprite behind the player
 var offsets = {
-	"up": Vector2(0, 40),     # Behind when facing up
-	"down": Vector2(0, -40),  # Behind when facing down
-	"right": Vector2(-40, 0),   # Behind when facing sideways
-	"left": Vector2(40,0)
+	"up": Vector2(0, 60),     # Behind when facing up
+	"down": Vector2(0, -60),  # Behind when facing down
+	"right": Vector2(-60, 0),   # Behind when facing sideways
+	"left": Vector2(60,0)
 }
 
 func update_behind_sprite():

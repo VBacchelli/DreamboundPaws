@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cwlml68yhpy5u"]
+[gd_scene load_steps=12 format=3 uid="uid://cwlml68yhpy5u"]
 
 [ext_resource type="Script" uid="uid://d61e0w533k3e" path="res://Scripts/riot.gd" id="1_knhbq"]
 [ext_resource type="Texture2D" uid="uid://brh50ek6h8dx4" path="res://Assets/Riot/RiotFrontIdleWalk.png" id="1_lhb56"]
@@ -24,6 +24,10 @@ region = Rect2(96, 0, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_knhbq"]
 atlas = ExtResource("1_lhb56")
 region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg2hg"]
+atlas = ExtResource("1_lhb56")
+region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q4va2"]
 atlas = ExtResource("1_lhb56")
@@ -51,6 +55,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_knhbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sg2hg")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q4va2")

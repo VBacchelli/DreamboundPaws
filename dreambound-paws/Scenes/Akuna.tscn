@@ -137,7 +137,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_down",
-"speed": 8.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
