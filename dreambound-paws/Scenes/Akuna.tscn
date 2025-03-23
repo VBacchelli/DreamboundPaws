@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dd18e7w7ap84l" path="res://Assets/Akuna/akunaIdleBack.png" id="4_wtaap"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_soyp7"]
+height = 38.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5t4om"]
 atlas = ExtResource("2_wiyh8")
@@ -151,7 +152,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_side",
-"speed": 8.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -165,7 +166,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_up",
-"speed": 8.0
+"speed": 7.0
 }]
 
 [node name="Akuna" type="CharacterBody2D"]
@@ -176,5 +177,6 @@ script = ExtResource("1_gdalr")
 shape = SubResource("CapsuleShape2D_soyp7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_hcgyk")
 animation = &"walk_down"

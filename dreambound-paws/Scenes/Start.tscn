@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c80kbeop1hbtc"]
+
+[ext_resource type="PackedScene" uid="uid://oyvashcj5usu" path="res://Scenes/Player.tscn" id="1_y4ycm"]
+[ext_resource type="PackedScene" uid="uid://cwlml68yhpy5u" path="res://Scenes/Riot.tscn" id="2_1lxxj"]
+[ext_resource type="PackedScene" uid="uid://cuxs8voyhekjj" path="res://Scenes/Akuna.tscn" id="3_37b1d"]
+
+[node name="Start" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_y4ycm")]
+position = Vector2(1744, 650)
+
+[node name="Riot" parent="." instance=ExtResource("2_1lxxj")]
+position = Vector2(1750, 599)
+
+[node name="Akuna" parent="." instance=ExtResource("3_37b1d")]
+position = Vector2(1719, 603)

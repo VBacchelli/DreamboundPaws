@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cyphg8ui58ylk" path="res://Assets/Player/player-sheet.png" id="1_7bkxu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pumql"]
+radius = 13.0
+height = 52.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vk2aw"]
 atlas = ExtResource("1_7bkxu")
@@ -460,5 +462,8 @@ script = ExtResource("1_5dcpq")
 shape = SubResource("CapsuleShape2D_pumql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_0wtcd")
-animation = &"idle_down"
+animation = &"walk_down"
+
+[node name="Camera2D" type="Camera2D" parent="."]

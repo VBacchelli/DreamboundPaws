@@ -74,5 +74,7 @@ script = ExtResource("1_knhbq")
 shape = SubResource("CapsuleShape2D_i6hu1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1, -8)
 sprite_frames = SubResource("SpriteFrames_lhb56")
 animation = &"walk_down"
