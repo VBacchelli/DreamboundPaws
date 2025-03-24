@@ -1,14 +1,15 @@
-[gd_scene load_steps=27 format=3 uid="uid://cuxs8voyhekjj"]
+[gd_scene load_steps=28 format=3 uid="uid://cuxs8voyhekjj"]
 
 [ext_resource type="Script" uid="uid://chlpmqyrp5nkb" path="res://Scripts/akuna.gd" id="1_gdalr"]
 [ext_resource type="Texture2D" uid="uid://boaj43er6qtaj" path="res://Assets/Akuna/akunaSide.png" id="1_sm0q7"]
 [ext_resource type="Texture2D" uid="uid://5s71tqeqjqrd" path="res://Assets/Akuna/akunaIdleSide.png" id="2_ek83v"]
+[ext_resource type="Script" uid="uid://cj3eiburfdu2c" path="res://Scripts/akunaCollisions.gd" id="2_fjq4b"]
 [ext_resource type="Texture2D" uid="uid://bg3isiis346if" path="res://Assets/Akuna/akunaFrontBack.png" id="2_vi2pw"]
 [ext_resource type="Texture2D" uid="uid://cd2j6isnpryhg" path="res://Assets/Akuna/akunaIdleFront.png" id="2_wiyh8"]
 [ext_resource type="Texture2D" uid="uid://dd18e7w7ap84l" path="res://Assets/Akuna/akunaIdleBack.png" id="4_wtaap"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_soyp7"]
-height = 38.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wg5cl"]
+size = Vector2(19, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5t4om"]
 atlas = ExtResource("2_wiyh8")
@@ -174,9 +175,14 @@ y_sort_enabled = true
 script = ExtResource("1_gdalr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_soyp7")
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_wg5cl")
+script = ExtResource("2_fjq4b")
+size_side = Vector2(36, 24)
+size_upDown = Vector2(19, 31)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_hcgyk")
-animation = &"walk_down"
+animation = &"walk_side"
+frame_progress = 0.911184

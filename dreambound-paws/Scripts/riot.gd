@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var animation_sprite = $AnimatedSprite2D
+@onready var collShape = $CollisionShape2D
 @onready var player = get_node("../Player")
 const BASE_SPEED = 250.0
 const SPRINT_SPEED = 400.0  # Increased speed when sprinting
@@ -16,7 +17,8 @@ var offsets = {
 
 func update_behind_sprite():
 	var dir = returned_direction_detailed(new_direction)  # Get player's facing direction
-	animation_sprite.global_position = animation_sprite.global_position.move_toward((player.global_position + offsets.get(dir, Vector2.ZERO)), 5)
+	animation_sprite.global_position = animation_sprite.global_position.move_toward((player.global_position + offsets.get(dir, Vector2.ZERO)), 6)
+	collShape.global_position = collShape.global_position.move_toward((player.global_position + offsets.get(dir, Vector2.ZERO)), 6)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -79,19 +81,25 @@ func get_animations(direction : Vector2, is_sprinting: bool):
 # Animation Direction
 func returned_direction(direction : Vector2):
 	#it normalizes the direction vector 
-	var normalized_direction  = direction.normalized()
+	var normalized_direction = direction
+	if direction.length() > 1.0:
+		normalized_direction = direction.normalized()
 	var default_return = "side"
 
 	if normalized_direction.y > 0:
+		collShape.shape.set_size(collShape.size_upDown)
 		return "down"
 	elif normalized_direction.y < 0:
+		collShape.shape.set_size(collShape.size_upDown)
 		return "up"
 	elif normalized_direction.x > 0:
 		#(right)
+		collShape.shape.set_size(collShape.size_side)
 		$AnimatedSprite2D.flip_h = false
 		return "side"
 	elif normalized_direction.x < 0:
 		#flip the animation for reusability (left)
+		collShape.shape.set_size(collShape.size_side)
 		$AnimatedSprite2D.flip_h = true
 		return "side"
 
@@ -100,9 +108,12 @@ func returned_direction(direction : Vector2):
 
 func returned_direction_detailed(direction : Vector2):
 	#it normalizes the direction vector 
-	var normalized_direction  = direction.normalized()
-	var default_return = "down"
+	var normalized_direction = direction
+	if direction.length() > 1.0:
+		normalized_direction = direction.normalized()
+	var default_return = "side"
 
+	emit_signal("rotateCollShape", normalized_direction.x!=0)
 	if normalized_direction.y > 0:
 		return "down"
 	elif normalized_direction.y < 0:
