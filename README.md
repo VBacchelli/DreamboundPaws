@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/e42bcf3b-6cba-4b50-91e4-a0cf3d17ea29)# DreamboundPaws
+# DreamboundPaws
  
 Assets credits:
 * tilesets: [Cainos on itch.io](https://cainos.itch.io/pixel-art-top-down-basic)
