@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://tree123"]
+
+[ext_resource type="Texture2D" path="res://Assets/Texture/TX Plant.png" id="1_tree_tex"]
+
+[node name="Tree" type="YSort"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tree_tex")
+position = Vector2(0, -256)
