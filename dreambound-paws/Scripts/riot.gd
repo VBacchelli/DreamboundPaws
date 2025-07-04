@@ -113,7 +113,7 @@ func returned_direction_detailed(direction : Vector2):
 		normalized_direction = direction.normalized()
 	var default_return = "side"
 
-	emit_signal("rotateCollShape", normalized_direction.x!=0)
+	
 	if normalized_direction.y > 0:
 		return "down"
 	elif normalized_direction.y < 0:
